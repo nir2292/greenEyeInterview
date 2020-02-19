@@ -39,6 +39,7 @@ initiateClusterTable = function(parent, clusters) {
   for (i = 0; i < clusters; i++) {
     var clusterList = document.createElement('ul');
     parent.appendChild(document.createElement('div').appendChild(clusterList));
+
     appendCanvasListItem(clusterList, "c" + i)
     for (j = 0; j < numberOfNeighbors; j++) {
       appendCanvasListItem(clusterList, "" + i + "_" + j)

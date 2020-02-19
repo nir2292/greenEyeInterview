@@ -10,3 +10,9 @@ running kmeansserver.py will open a server on localhost:8080 that serves cluster
 
 mnistloader.py is a 3rd party library for downloading MNIST db.
 to avoid frequent downloads the db is saved to mnist.pkl
+
+I used:
+http.server for server-client communication
+numpy,PIL for array manipulation
+base64 for string formatting
+sklearn for kMeans algorithm

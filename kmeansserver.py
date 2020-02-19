@@ -1,13 +1,9 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from io import BytesIO
-
 from mnistloader import load_mnist
-
 import numpy as np
 from PIL import Image
-import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
-
 import skimage
 import base64
 
@@ -16,7 +12,7 @@ class KmeansData:
     def __init__(self):
         print("loading database...")
         (x_train, t_train), (x_test, t_test) = load_mnist(flatten=True, normalize=False)
-        self.x_train = x_train[:1000]
+        self.x_train = x_train[:2000]
         self.numberOfNeighborsToDisplay = 5
 
 
@@ -24,7 +20,7 @@ class KmeansData:
         print("calculating kmeans for ", clusters, " clusters")
         db = self.x_train
         X = np.array(db)
-        kmeans = KMeans(n_clusters=clusters, random_state=0).fit(X)
+        kmeans = KMeans(n_clusters=clusters, random_state=42).fit(X)
         self.setClusters(kmeans)
         return kmeans
 
