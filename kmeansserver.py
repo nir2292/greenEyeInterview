@@ -52,7 +52,7 @@ class Serv(BaseHTTPRequestHandler):
         separator = "/----/"
         clusterImagesString = ""
         for i in range(len(kmeansData.clusters)):
-            centerToString = np.array(kmeansData.clusters[i][0]) * 255
+            centerToString = np.array(kmeansData.clusters[i][0])
             centerToString = centerToString.astype(np.uint8).reshape(28, 28)
             clusterImagesString += self.imgTo64byteString(centerToString) + separator
 
