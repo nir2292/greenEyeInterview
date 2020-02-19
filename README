@@ -1,0 +1,12 @@
+files:
+kmeansserver.py
+mnistloader.py
+index.html
+main.css
+main.js
+
+usage:
+running kmeansserver.py will open a server on localhost:8080 that serves cluster requests to a client
+
+mnistloader.py is a 3rd party library for downloading MNIST db.
+to avoid frequent downloads the db is saved to mnist.pkl
